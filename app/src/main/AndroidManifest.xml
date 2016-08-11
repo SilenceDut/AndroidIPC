@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".StudyBinderService"/>
+        <service
+            android:name=".StudyBinderService"
+            />
+        <service
+            android:name=".NoAidlService"
+            />
     </application>
 
 </manifest>
