@@ -25,16 +25,12 @@ public class NoAidlService extends Service {
         return mNoAidlBinder;
 
     }
-
     private class NoAidlBinder extends Binder {
         @Override
         protected boolean onTransact(int code, Parcel data, Parcel reply,
-                                     int flags) throws RemoteException
-        {
-            switch (code)
-            {
-                case TRANSACTION_studyBinder:
-                {
+                                     int flags) throws RemoteException {
+            switch (code) {
+                case TRANSACTION_studyBinder: {
                     data.enforceInterface(DESCRIPTOR);
                     String _arg0;
                     _arg0 = data.readString();

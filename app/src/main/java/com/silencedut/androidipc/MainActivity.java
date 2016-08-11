@@ -36,15 +36,12 @@ public class MainActivity extends AppCompatActivity {
     private ServiceConnection mServiceConn = new ServiceConnection()
     {
         @Override
-        public void onServiceDisconnected(ComponentName name)
-        {
-
+        public void onServiceDisconnected(ComponentName name) {
 
         }
 
         @Override
-        public void onServiceConnected(ComponentName name, IBinder service)
-        {
+        public void onServiceConnected(ComponentName name, IBinder service) {
 
             mStudyBinder = IStudyBinder.Stub.asInterface(service);
             try {
@@ -68,19 +65,15 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void serviceInvoked(IBinder service)
-    {
+    public void serviceInvoked(IBinder service) {
 
-        if (service == null)
-        {
+        if (service == null) {
             Toast.makeText(this, "未连接服务端或服务端被异常杀死", Toast.LENGTH_SHORT).show();
-        } else
-        {
+        } else {
             android.os.Parcel _data = android.os.Parcel.obtain();
             android.os.Parcel _reply = android.os.Parcel.obtain();
             String _result;
-            try
-            {
+            try {
                 _data.writeInterfaceToken("NoAidlService");
                 _data.writeString("SilenceDut");
                 service.transact(NoAidlService.TRANSACTION_studyBinder, _data, _reply, 0);
@@ -89,11 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 mResultTv.setText(mResultTv.getText()+"\n"+_result);
                 Toast.makeText(this, _result + "", Toast.LENGTH_SHORT).show();
 
-            } catch (RemoteException e)
-            {
+            } catch (RemoteException e) {
                 e.printStackTrace();
-            } finally
-            {
+            } finally {
                 _reply.recycle();
                 _data.recycle();
             }

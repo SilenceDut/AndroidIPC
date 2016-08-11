@@ -20,6 +20,8 @@
             />
         <service
             android:name=".NoAidlService"
+            android:process=":remote"
+
             />
     </application>
 
