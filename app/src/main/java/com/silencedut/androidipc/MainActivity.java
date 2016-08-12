@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         bindService(intent0, mServiceConn, Context.BIND_AUTO_CREATE);
         ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
         activityManager.getDeviceConfigurationInfo();
+
     }
 
     private ServiceConnection mServiceConn = new ServiceConnection()
