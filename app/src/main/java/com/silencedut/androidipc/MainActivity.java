@@ -20,6 +20,7 @@ import static android.content.Context.ACTIVITY_SERVICE;
 public class MainActivity extends AppCompatActivity {
     IStudyBinder mStudyBinder;
     private TextView mResultTv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         bindService(intent0, mServiceConn, Context.BIND_AUTO_CREATE);
         ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
         activityManager.getDeviceConfigurationInfo();
+        mResultTv.requestLayout();
 
     }
 
