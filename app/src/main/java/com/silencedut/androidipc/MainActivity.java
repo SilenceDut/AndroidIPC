@@ -12,6 +12,7 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent0 = new Intent(this,StudyBinderService.class);
         bindService(intent, mNoAidlConnection, Context.BIND_AUTO_CREATE);
         bindService(intent0, mServiceConn, Context.BIND_AUTO_CREATE);
-        ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
-        activityManager.getDeviceConfigurationInfo();
-        mResultTv.requestLayout();
 
     }
 
